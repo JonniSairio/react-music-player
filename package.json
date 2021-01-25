@@ -1,5 +1,6 @@
 {
   "name": "music-player",
+  "homepage": "https://jonnisairio.github.io/react-music-player",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
