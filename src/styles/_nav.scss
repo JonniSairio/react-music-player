@@ -1,0 +1,29 @@
+nav {
+  min-height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  button {
+    display: flex;
+    background: linear-gradient(to right, rgb(19, 21, 21), rgb(16, 27, 35));
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    border: 1px solid #fff;
+    box-shadow: 1px 1px 5px #fff;
+    padding: 0.4rem;
+    transition: all 0.3s ease;
+    z-index: 100;
+    margin-top: 20px;
+    &:hover {
+      background: #fff;
+      color: #111;
+    }
+    h4 {
+      padding: 0.1rem 0.5rem;
+    }
+  }
+  h1 {
+    margin-top: 20px;
+  }
+}

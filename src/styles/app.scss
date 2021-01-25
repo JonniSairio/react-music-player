@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  background: linear-gradient(to right, rgb(19, 21, 21), rgb(16, 27, 35));
+  color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  font-family: "Quicksand", sans-serif;
+}
+
+@import "./player";
+@import "./song";
+@import "./library";
+@import "./nav";
