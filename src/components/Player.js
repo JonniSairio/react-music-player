@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
     faPlayCircle, 
     faStepForward,
     faStepBackward,
     faPauseCircle,
+    faVolumeDown,
 } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -19,7 +20,7 @@ const Player = ({
     setCurrentSong,
     setSongs, 
 }) => {
-
+    const [activeVolume, setActiveVolume] = useState(false);
     //useEffect
     useEffect(() => {
         
@@ -76,6 +77,12 @@ const Player = ({
       }
       if(isPlaying) audioRef.current.play();
     };
+
+    const changeVolume = (e) => {
+        let value = e.target.value;
+        audioRef.current.volume = value;
+        setSongInfo({ ...songInfo, volume: value });
+      };
     
     return(
         <div className="player">
@@ -109,8 +116,22 @@ const Player = ({
                     icon={faStepForward}
                     onClick={() => skipTrackHandler('skip-forward')} 
                 />
-            </div>
-            
+                <FontAwesomeIcon
+                    size="2x"
+                    onClick={() => setActiveVolume(!activeVolume)}
+                    icon={faVolumeDown}
+                />
+                    {activeVolume && (
+                    <input
+                        onChange={changeVolume}
+                        value={songInfo.volume}
+                        max="1"
+                        min="0"
+                        step="0.01"
+                        type="range"
+                    />
+                )}  
+            </div> 
         </div>
     );
 }
